@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy 23rd Anniversary 💖 Raj Sekhar & Sandhya Rani</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600;900&family=Dancing+Script:wght@400;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- FLOATING PARTICLES CANVAS -->
+<canvas id="particleCanvas"></canvas>
+
+<!-- MUSIC TOGGLE -->
+<button class="music-toggle" id="musicToggle" title="Toggle Music">🎵</button>
+
+<!-- ===== SECTION 1: HERO ===== -->
+<section id="hero" class="section active">
+  <div class="hero-content">
+    <div class="hero-badge">07 June 2003 — 07 June 2026</div>
+    <h1 class="hero-title">
+      <span class="gold-text">Happy</span><br>
+      <span class="hero-number">23<sup>rd</sup></span><br>
+      <span class="hero-subtitle-text">Anniversary</span>
+    </h1>
+    <div class="names-display">
+      <span class="name-raj">Mr. Raj Sekhar</span>
+      <div class="heart-divider">♥</div>
+      <span class="name-sandhya">Mrs. Sandhya Rani</span>
+    </div>
+    <p class="hero-tagline">A love story written in the stars since 07 June 2003</p>
+    <button class="cta-btn" onclick="goToSection('welcome')">
+      Begin the Love Journey ❤️
+    </button>
+    <div class="countdown-bar" id="heroCountdown"></div>
+  </div>
+  <div class="scroll-indicator">✦ scroll ✦</div>
+</section>
+
+<!-- ===== SECTION 2: WELCOME ===== -->
+<section id="welcome" class="section">
+  <div class="welcome-card glass-card">
+    <div class="welcome-icon">💖</div>
+    <h2 class="section-title">Welcome to the Love Quest</h2>
+    <p class="welcome-text">Before we begin this beautiful journey, tell us who you are…</p>
+    <div class="input-group">
+      <input type="text" id="visitorName" placeholder="Your name…" class="love-input" maxlength="30">
+      <button class="cta-btn" onclick="startJourney()">Begin ✨</button>
+    </div>
+    <div class="welcome-message hidden" id="welcomeMsg"></div>
+  </div>
+</section>
+
+<!-- ===== SECTION 3: QUEST MAP ===== -->
+<section id="quest" class="section">
+  <div class="quest-header">
+    <h2 class="section-title" id="questGreeting">The Love Quest</h2>
+    <p class="quest-subtitle">Complete all 5 levels to unlock the grand surprise 🎁</p>
+    <div class="progress-track">
+      <div class="progress-fill" id="progressFill"></div>
+      <span class="progress-text" id="progressText">0 / 5 levels complete</span>
+    </div>
+  </div>
+  <div class="level-path">
+    <div class="level-node" id="lvl1" onclick="openLevel(1)">
+      <div class="node-circle">💌</div>
+      <div class="node-label">Level 1<br><small>Word Whisper</small></div>
+    </div>
+    <div class="path-line"></div>
+    <div class="level-node locked" id="lvl2" onclick="openLevel(2)">
+      <div class="node-circle">🧠</div>
+      <div class="node-label">Level 2<br><small>Memory Match</small></div>
+    </div>
+    <div class="path-line"></div>
+    <div class="level-node locked" id="lvl3" onclick="openLevel(3)">
+      <div class="node-circle">🧩</div>
+      <div class="node-label">Level 3<br><small>Photo Puzzle</small></div>
+    </div>
+    <div class="path-line"></div>
+    <div class="level-node locked" id="lvl4" onclick="openLevel(4)">
+      <div class="node-circle">❤️</div>
+      <div class="node-label">Level 4<br><small>Heart Riddle</small></div>
+    </div>
+    <div class="path-line"></div>
+    <div class="level-node locked" id="lvl5" onclick="openLevel(5)">
+      <div class="node-circle">🎁</div>
+      <div class="node-label">Final Quest<br><small>Grand Surprise</small></div>
+    </div>
+  </div>
+  <div class="quest-nav">
+    <button class="nav-btn" onclick="goToSection('gallery')">📸 Gallery</button>
+    <button class="nav-btn" onclick="goToSection('letter')">💌 Love Letter</button>
+  </div>
+</section>
+
+<!-- ===== SECTION 4: GALLERY ===== -->
+<section id="gallery" class="section">
+  <div class="section-header">
+    <h2 class="section-title">Our Beautiful Memories</h2>
+    <p class="section-sub">A lifetime of love, captured in moments</p>
+  </div>
+  <!-- Gallery images are provided in code; upload removed for easier parent viewing -->
+  <div class="gallery-grid" id="galleryGrid">
+    <div class="gallery-placeholder">
+      <div class="placeholder-icon">📷</div>
+      <p>Upload photos to fill this gallery with your beautiful memories</p>
+    </div>
+  </div>
+  <button class="back-btn" onclick="goToSection('quest')">← Back to Quest</button>
+</section>
+
+<!-- ===== SECTION 5: LOVE LETTER ===== -->
+<section id="letter" class="section">
+  <div class="letter-container">
+    <div class="letter-scroll" id="letterScroll">
+      <div class="letter-seal" id="letterSeal" onclick="openLetter()">
+        <span>💖</span>
+        <small>Click to Open</small>
+      </div>
+      <div class="letter-content hidden" id="letterContent">
+        <div class="letter-heading">A Love Letter</div>
+        <div class="letter-salutation">My Dearest Mom & Dad,</div>
+        <div class="letter-body">
+          <p>Twenty-three years ago, two beautiful souls began a journey together — creating not just a marriage, but a family filled with love, values, strength, and endless memories. Today, on this milestone anniversary, I want to say everything I sometimes forget to say out loud.</p>
+          <p>You are my favourite chapter of every day. The quiet ones — the loud ones — the ones where I forgot my lines and you helped me remember.</p>
+          <p>You taught us how to be kind, humble, respectful, and strong. Your wisdom and love have shaped us into better individuals, and helped us find our place in this world with confidence and integrity.</p>
+          <p>I have witnessed your happiest moments as well as your struggles. Through every high and every low, you stood together with unwavering faith and strength. Your relationship has taught me the true meaning of commitment, patience, sacrifice, and unconditional love.</p>
+          <p>Thank you for shaping our lives so beautifully and for being the foundation of everything we cherish today. I promise to always honour the trust you have placed in me — and to make you proud.</p>
+          <p>No matter where life takes me, both of you will forever remain the most precious and beautiful souls in my life.</p>
+          <p>Wishing you a very Happy 23rd Wedding Anniversary 💖 May your journey continue to be filled with happiness, good health, peace, and countless blessings.</p>
+        </div>
+        <div class="letter-signature">
+          With all my love,<br>
+          <em>Your loving daughter</em> 🌸
+        </div>
+        <button class="cta-btn" onclick="goToSection('quest')" style="margin-top:2rem">→ Back to Quest</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SECTION 6: SURPRISE ===== -->
+<section id="surprise" class="section">
+  <canvas id="confettiCanvas"></canvas>
+  <div class="surprise-content">
+    <div class="surprise-badge">✨ All Levels Complete ✨</div>
+    <h1 class="surprise-title">Happy 23rd Anniversary</h1>
+    <h2 class="surprise-names">Mom & Dad 💖</h2>
+    <p class="surprise-message">Twenty-three years of love, laughter, and an unbreakable bond. Today and always — we celebrate YOU.</p>
+    <div class="surprise-gallery" id="surpriseGallery"></div>
+    <div class="surprise-actions">
+      <button class="cta-btn" onclick="downloadCard()">⬇ Download Card</button>
+      <button class="cta-btn secondary" onclick="shareWhatsApp()">📱 Share on WhatsApp</button>
+      <button class="nav-btn" onclick="resetQuest()">🔄 Play Again</button>
+    </div>
+  </div>
+</section>
+
+<!-- ===== LEVEL MODALS ===== -->
+<div class="modal-overlay" id="levelModal">
+  <div class="modal-box glass-card">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div id="modalContent"></div>
+  </div>
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <img id="lightboxImg" src="" alt="">
+</div>
+
+<audio id="bgMusic" loop>
+  <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3" type="audio/mpeg">
+</audio>
+
+<!-- PERSISTENT SITE NAV -->
+<nav class="site-nav" aria-label="Main navigation">
+  <button class="nav-btn" onclick="goToSection('hero')">🏠 Home</button>
+  <button class="nav-btn" onclick="goToSection('quest')">🗺️ Quest</button>
+  <button class="nav-btn" onclick="goToSection('gallery')">📸 Gallery</button>
+  <button class="nav-btn" onclick="goToSection('letter')">💌 Letter</button>
+  <button class="nav-btn" onclick="goToSection('surprise')">🎉 Surprise</button>
+</nav>
+
+<script src="script.js"></script>
+</body>
+</html>`
