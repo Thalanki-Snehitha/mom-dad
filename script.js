@@ -11,7 +11,7 @@ const state = {
 // Add your parent background image path(s) here and any default gallery images.
 const CONFIG = {
   // Set to a path or data URL for the parent photo background (example: 'images/parents.jpg')
-  parentBackground: '',
+  parentBackground: 'parents.jpg',
   // Set this to the filename or path of the parents' photo to use directly in Level 3
   puzzleImage: '1.jpeg',
 };
