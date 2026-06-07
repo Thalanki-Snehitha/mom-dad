@@ -28,6 +28,11 @@ const defaultGalleryImages = [
   '7.jpeg',
   '8.jpeg',
   '9.jpeg',
+  'sneha.jpeg',
+  'sneha2.jpeg',
+  'sneha1.jpg',
+  'sneha3.jpg',
+
 ];
 
 // Hardcode puzzle images here (these will be shown inside Level 3 as selectable photos)
@@ -41,6 +46,10 @@ const defaultPuzzleImages = [
   '7.jpeg',
   '8.jpeg',
   '9.jpeg',
+  'sneha.jpeg',
+  'sneha2.jpeg',
+  'sneha1.jpg',
+  'sneha3.jpeg',
 ];
 
 // ===== INIT =====
@@ -334,7 +343,7 @@ function initPuzzle(event) {
 function setupPuzzleFromSrc(src) {
   const img = new Image();
   img.onload = () => {
-    const COLS = 3, ROWS = 3;
+    const COLS = 2, ROWS = 2;
     const pw = 180, ph = 180;
     const tw = pw / COLS, th = ph / ROWS;
     const total = COLS * ROWS;
